@@ -7,7 +7,6 @@
 	export let design: Design = 'plain';
 	export let href: string | undefined = undefined;
 	export let outline: Outline = undefined;
-	export let onClick = (e: Event) => {};
 
 	const classList = [
 		'button',
@@ -21,19 +20,19 @@
 
 {#if tag === 'div'}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<div on:click={onClick} class={classList}>
+	<div on:click class={classList} {...$$restProps}>
 		<slot name="pre" />
 		<slot />
 		<slot name="post" />
 	</div>
 {:else if tag === 'a'}
-	<a on:click={onClick} {href} class={classList}>
+	<a on:click {href} class={classList} {...$$restProps}>
 		<slot name="pre" />
 		<slot />
 		<slot name="post" />
 	</a>
 {:else}
-	<button on:click={onClick} class={classList}>
+	<button on:click class={classList} {...$$restProps}>
 		<slot name="pre" />
 		<slot />
 		<slot name="post" />

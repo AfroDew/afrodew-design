@@ -6,3 +6,4 @@ export { default as Chips } from './Chips.svelte';
 export { default as Table } from './Table.svelte';
 export { default as AppBar } from './AppBar.svelte';
 export { default as GlobalStyles } from './GlobalStyles.svelte';
+export { default as Card } from './Card.svelte';

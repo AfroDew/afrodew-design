@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Input, Text, Chips, Table, AppBar } from '$lib/components';
+	import { Button, Input, Text, Chips, Table, AppBar, Card } from '$lib/components';
 	import Dialog from '$lib/components/Dialog.svelte';
 
 	let openDialog = false;
@@ -15,9 +15,20 @@
 <Button outline="plain">Button Outline: Plain</Button>
 <Input label="Label" placeholder="Enter here" />
 
+<!-- Card -->
+<section>
+	<Card
+		elevated
+		class="sss"
+		on:click={(e) => {
+			console.log(e);
+		}}>Card</Card
+	>
+</section>
+
 <!-- Dialog -->
 <div>
-	<Button onClick={toggleDialog}>Toggle Dialog</Button>
+	<Button on:click={toggleDialog}>Toggle Dialog</Button>
 	<Dialog
 		open={openDialog}
 		closed={() => {
@@ -67,3 +78,9 @@
 		]}
 	/>
 </div>
+
+<style>
+	section {
+		padding: 2rem;
+	}
+</style>
